@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>day01 homework</title>
+  <style>
+  ul{    -webkit-padding-start: 0px;}
+.red{background:#0fd;}
+  </style>
+ </head>
+ <body>
+  <div>
+	<a href="#">前端大全<span>▲</span><span>▼<span></a>
+	<ul>
+		<li><a href="#">ECMA</a></li>
+		<li><a href="#">HTML5</a></li>
+		<li></li>
+		<li><a href="#">CSS3</a></li>
+		<li><a href="#">JavaScript</a></li>
+	</ul>
+  </div>
+  <p>实现下拉菜单：换箭头和悬停变色效果。用jQuery写入大部分样式，除了悬停时变色效果写了css。</p>
+  <script src="scripts/jquery-1.11.3.js"></script>
+	<script>
+	
+	$('div>a').css('padding','10px').css('border','1px solid #ddd')
+	$('div>a>span:first').css('padding','10px').css('display','none')
+	$('div>a>span:last').css('padding','10px').css('display','inline')
+	$('ul').css('display','none').css('border','1px solid #ddd').css('width','120px')
+	$('ul>li').css('list-style','none').css('width','120px').css('height','40px').css('text-align','center')
+	$('ul>li>a').css('width','120px').css('height','40px')
+	$('div a').css('text-decoration','none').css('color','#333').css('line-height','40px')
+	$('ul>li:odd').css('background','lightblue');
+	$('div>a').click(function(){
+		$('ul').toggle()
+		$('div>a>span').toggle()
+	})
+	$('div>ul>li').hover(
+	  function () {
+		$(this).css('background','');
+		$(this).addClass("red");
+	  },
+	  function () {
+		$(this).removeClass("red");
+		$('ul>li:odd').css('background','lightblue');
+  }
+
+)
+
+	</script>
+ </body>
+</html>
